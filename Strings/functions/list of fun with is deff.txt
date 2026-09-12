@@ -1,0 +1,165 @@
+# ==============================================================================
+# PYTHON STRING METHODS REFERENCE SHEET
+# All methods return a new value. Python strings are immutable and never mutate.
+# ==============================================================================
+
+# --- CASE TRANSFORMATION ---
+
+# upper(): Converts all characters in the string to uppercase.
+"hello".upper()  # 'HELLO'
+
+# lower(): Converts all characters in the string to lowercase.
+"HELLO".lower()  # 'hello'
+
+# capitalize(): Capitalizes the very first character and lowers the rest.
+"hello WORLD".capitalize()  # 'Hello world'
+
+# title(): Capitalizes the first letter of every word (separated by spaces/symbols).
+"hello world".title()  # 'Hello World'
+
+# swapcase(): Toggles uppercase letters to lowercase and vice versa.
+"Hello World".swapcase()  # 'hELLO wORLD'
+
+# casefold(): Aggressively lowers characters for strict, case-insensitive Unicode matching.
+"Straße".casefold()  # 'strasse'
+
+
+# --- SEARCHING AND COUNTING ---
+
+# find(sub): Returns the lowest index where substring 'sub' starts, or -1 if missing.
+"banana".find("na")  # 2
+
+# rfind(sub): Returns the highest index where substring 'sub' starts, or -1 if missing.
+"banana".rfind("na")  # 4
+
+# index(sub): Identical to find(), but raises a ValueError exception if missing.
+"banana".index("na")  # 2
+
+# rindex(sub): Identical to rfind(), but raises a ValueError exception if missing.
+"banana".rindex("na")  # 4
+
+# count(sub): Counts the total non-overlapping occurrences of substring 'sub'.
+"banana".count("na")  # 2
+
+
+# --- SPLITTING AND JOINING ---
+
+# split(sep): Breaks a string into a list of substrings using a designated separator.
+"a,b,c".split(",")  # ['a', 'b', 'c']
+
+# rsplit(sep): Splits a string into a list starting from the right side.
+"a,b,c".rsplit(",", maxsplit=1)  # ['a,b', 'c']
+
+# join(iterable): Concatenates elements of an iterable together using the string as a glue separator.
+"-".join(['a', 'b', 'c'])  # 'a-b-c'
+
+# splitlines(): Breaks a string at newline boundaries and returns them as a list.
+"line1\nline2".splitlines()  # ['line1', 'line2']
+
+# partition(sep): Splits a string at the first instance of 'sep' into a 3-tuple: (before, sep, after).
+"a-b-c".partition("-")  # ('a', '-', 'b-c')
+
+# rpartition(sep): Splits a string at the last instance of 'sep' into a 3-tuple: (before, sep, after).
+"a-b-c".rpartition("-")  # ('a-b', '-', 'c')
+
+
+# --- MODIFYING AND TRIMMING ---
+
+# strip(): Discards both leading and trailing whitespace or designated characters.
+"  hello  ".strip()  # 'hello'
+
+# lstrip(): Discards only leading whitespace or designated characters.
+"  hello  ".lstrip()  # 'hello  '
+
+# rstrip(): Discards only trailing whitespace or designated characters.
+"  hello  ".rstrip()  # '  hello'
+
+# replace(old, new): Substitutes occurrences of a specified substring with a new one.
+"banana".replace("a", "o")  # 'bonono'
+
+# removeprefix(prefix): Cuts a specific prefix out from the start of the string if it exists.
+"Python3".removeprefix("Py")  # 'thon3'
+
+# removesuffix(suffix): Cuts a specific suffix out from the end of the string if it exists.
+"Python3".removesuffix("3")  # 'Python'
+
+
+# --- BOOLEAN VALIDATION (RETURNS TRUE OR FALSE) ---
+
+# isalpha(): Confirms if all characters are strictly alphabetic letters.
+"Python".isalpha()  # True
+
+# isdigit(): Confirms if all characters are digits.
+"12345".isdigit()  # True
+
+# isalnum(): Confirms if all characters are alphanumeric (letters or numbers).
+"Python3".isalnum()  # True
+
+# isnumeric(): Confirms if all characters represent numeric values (includes fractions, subscripts).
+"½".isnumeric()  # True
+
+# isspace(): Confirms if the string consists entirely of whitespace characters.
+"   \n\t".isspace()  # True
+
+# islower(): Confirms if all alphabetic letters present are lowercase.
+"hello".islower()  # True
+
+# isupper(): Confirms if all alphabetic letters present are uppercase.
+"HELLO".isupper()  # True
+
+# istitle(): Confirms if the string matches title-case formatting rules.
+"Hello World".istitle()  # True
+
+# isidentifier(): Confirms if the string represents a valid Python variable/identifier name.
+"my_var1".isidentifier()  # True
+
+# startswith(prefix): Confirms if a string begins with a specific pattern.
+"Python".startswith("Py")  # True
+
+# endswith(suffix): Confirms if a string ends with a specific pattern.
+"Python".endswith("on")  # True
+
+# isascii(): Confirms if the string contains only ASCII characters.
+"hello".isascii()  # True
+
+# isprintable(): Confirms if all characters are printable (not escape codes like \n).
+"hello".isprintable()  # True
+
+
+# --- ALIGNMENT AND FORMATTING ---
+
+# ljust(width): Left-aligns text within a padded block of a given width.
+"hi".ljust(5, "-")  # 'hi---'
+
+# rjust(width): Right-aligns text within a padded block of a given width.
+"hi".rjust(5, "-")  # '---hi'
+
+# center(width): Centers text within a padded block of a given width.
+"hi".center(6, "-")  # '--hi--'
+
+# zfill(width): Pads the left side of a string with zeros until it hits a specific target length.
+"42".zfill(5)  # '00042'
+
+# format(): Formats specific placeholders inside a string text block.
+"{} is {}".format("Python", "cool")  # 'Python is cool'
+
+# format_map(): Formats placeholders using a dictionary map directly.
+"{lang}".format_map({'lang': 'Python'})  # 'Python'
+
+
+# --- ADVANCED CONVERSIONS ---
+
+# encode(encoding): Encodes a string into bytes using a specified text encoding format.
+"hello".encode("utf-8")  # b'hello'
+
+# maketrans(x, y): Generates a translation mapping table for character substitution.
+table = str.maketrans("aeiou", "12345")
+
+# translate(table): Remaps characters based on a pre-configured translation table.
+"hello".translate(table)  # 'h2ll4'
+
+
+# --- GLOBAL STRING FUNCTIONS (NOT METHOD CALLS) ---
+
+# len(string): Returns the total character length count of a string.
+len("hello")  # 5
