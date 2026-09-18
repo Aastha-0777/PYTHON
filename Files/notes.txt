@@ -1,0 +1,291 @@
+aiml : data science
+web application:
+dektop application
+game development:
+
+compiler | interprter:
+
+python is using interprter:
+.py
+
+scripting lang | programming lang
+eg:
+c -> void main
+
+-------> line1
+--->line
+<--->
+we 2 typed prog/scriptinh
+
+statically typed:
+    when we declare var we have to define data type of variable
+    c,c++,java
+dynamically type:
+    when we declare var we dont  have to define data type of variable
+    python,js
+
+type casting:
+implicit type cast:compier 
+                  :int x = 12.90  --> 12
+                  :float f = 90 -->90.00
+
+explicit type cast:
+narrow type cast :
+                 89.90 -->float ___->int
+
+broad type cast:
+                80 -->int __->float
+
+operators: 
+
+unery op: only operand
+        : python does not have unery operators
+binery op:
+terenry oop:
+
+arithmetic operators: +,-,*,/,%,**,//
+asignment operators : =, +=,
+logical op: and or not
+relational op: >,<,!= ==,
+membshio op : in not in
+identity op : is is not
+
+asignment = left side value asign to right side variable
+
+no1 = 10
+no2 = 20
+
+decision making statments:
+if else
+switch case (match case)
+loops
+
+c lang:
+if(cond){
+    if body
+}
+else{
+    else body
+}
+
+indentation block
+if cond:
+    if body
+    if body.
+else:
+    else body.    
+
+logocal operators:
+and or not
+
+cond1 and cond2
+
+TRUE --->TRUE---->TRUE
+TRUE --->FALSE --->FALSE
+FALSE ____________->FALSE
+
+
+cond1 or cond2
+
+TRUE __________>TRUE
+FALSE --->FALSE -->FALSE
+FALSE ---->TRUE ---->True
+
+
+PCM: total >250 
+maths 90>
+
+
+to attend exam user attendce must be grt 90% and 8 asignment submission done
+optinal is
+50 % attendce and 20 asignment
+
+if (at>90 and as==8) or (at>=50 and as ==20)
+
+loops:
+entry control loops: 
+    for while
+
+python does not have exit control loop:
+exit control loop
+    do while
+
+for:
+while:
+
+for(init;cond;incremnt){
+
+}
+
+
+range()
+
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+
+
+GCD :grt common div;
+48:1 2 3 4 6 12 24 48
+18:1 2 3 6 9 18
+
+6CD
+
+
+guess number:
+
+user = 25
+pleae guess numner = 50 too big
+please guess number = 30 big
+please guess number = 15 small
+please guess number = 1 too small
+
+<------>
+string:
+string stores data in array:
+string is dynamic:
+string is iterable object: loop
+string is supscripable: access index
+string is immutable:
+
+
+#data = "hi this is ahmedabad"
+
+no of space -->
+
+array:
+
+list
+tuple
+dict
+set
+
+
+list:
+
+list is dyanmic 
+list is iterable
+list is supscripable
+list allows duplicate element:
+list is hetrogenious: ["s",True,None,"",12]
+list is ordered
+list is mutable
+data type of list is list
+will use [] braces to declare list.
+
+task1:
+
+list
+data = ["raj","hr","bob","amit","kunal","ahmedabad","d","ok"]
+
+name len >=4
+
+data =[11,21,34,56,65,54,43,78,0,90,87,65.67,90,111,345,4,32]
+
+
+data = ["jay","ajay","raj","jay","parth","amit","parth","kunal"]
+
+["jay","ajay","raj"]
+
+
+data = ["naman","jay","racecar","a","bob","jay","madam"]
+
+#name palidnrome ---> new list
+
+sales = [[12,30],[23,67],[30,90]]
+
+[12,30,23,67,30,90]
+
+
+[1,[2]]
+pop - [2] -->data type checl -->list -->extend 2
+
+tuple:
+tuple is dyanmic
+tuple is iterable
+tuple is supscripable
+tuple is immutable
+same as list...
+data type of tuple is tuple
+we can use () to declare empty list
+
+-----------------------------------
+dict:
+dict is dyanmic 
+dict is iterable
+dict is supscripable
+dict allows duplicate values but not key:
+dict is hetrogenious: ["s",True,None,"",12]
+dict is unordered
+dict is mutable
+data type of dict is dict
+will use {} braces to declare dict
+
+
+set:
+set is dynamic
+set is iterable
+set is unordered
+set does not store data in index
+set is not supscripable
+set is hetrogenious
+set does not allows duplicate elements
+set is mutable
+data type of set is set
+will use {} braces for declare set
+
+
+FUNC:
+def funcname():
+    block..
+
+
+files:
+use:
+to achive data peristancy we can use file or db:
+data peristancy is process to store data permenently
+
+file:
+open
+read/write
+close
+
+mode:
+r
+w
+r+
+w+
+a
+a+
+b
+x
+
+--------------------------->
+path:
+location:
+
+2 type path:
+absolute path: D:\royal\python_2026_even\th.txt
+realtive path: th.txt
+
+
+D:\royal\python_2026_even\functions\decorartorDemo2.py
+functions\decorartorDemo2.py
+
+
+
+folder:
+java
+
+./ : current dir
+../ : java p-->parent
+../../ java/p/
+
+
+data  = {"id":1,"name":"raj","age":23}
+
+id =1
+name=raj
+age=23
