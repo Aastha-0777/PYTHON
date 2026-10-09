@@ -197,6 +197,9 @@ print('---------- WELCOME TO ZOMBIE SURVIVAL GAME ----------\n\n')
 while True:
 
     print(f'========= DAY : {day} =========\n')
+
+    print(f'Your Details : {zombieData}\n')
+
     print('--------- OPTIONS ---------')
     print('1. Search a building')
     print('2. Fight zombies')
