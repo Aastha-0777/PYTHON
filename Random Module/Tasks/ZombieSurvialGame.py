@@ -82,7 +82,7 @@ def searchBuilding():
         for i in foundList:
             amount = random.randint(0, 6)
             print(f'{amount} {i} Found...')
-            if zombieData[i] != 'health':
+            if i != 'health':
                 zombieData[i] += amount
             else:
                 continue
@@ -118,7 +118,7 @@ def fightZombies():
                         secondZombieHealth -= 20
                         print('Zombiee Health -20...')
                         zombieData["health"] -= random.randint(1, 8)
-                        if zombieData['health'] == 0:
+                        if zombieData['health'] <= 0:
                             print('You Died Fighting Other Zombiee...')
 
                     print('Eureka!!You Defeted the Zombiee in the Fight...')
@@ -148,15 +148,18 @@ def fightZombies():
 
 def eatFood():
 
-    if zombieData['health'] >= 100:
-        print('You Can\'t Eat more Food...\n\tYour Health is Full...')
+    if zombieData['food'] <= 0:
+        print('You Don\'t have enough food to eat...')
     else:
-        zombieData['food'] -= 1
-        zombieData['health'] += 5
-        print('Health Increased +5...')
-        if zombieData['food'] <= 0:
-            print('You have no food...\n\tPlease visti shop or a buliding...')
-
+        if zombieData['health'] >= 100:
+            print('You Can\'t Eat more Food...\n\tYour Health is Full...')
+        else:
+            zombieData['food'] -= 1
+            zombieData['health'] += 5
+            print('Health Increased +5...')
+            if zombieData['food'] <= 0:
+                print('You have no food...\n\tPlease visti shop or a buliding...')
+        
     return
 
 
@@ -178,7 +181,7 @@ def visitShop():
     qty = int(input('Enter the Quantity of the Item : '))
 
     bill = shopItems[item] * qty
-    if zombieData['money'] <= 0 and zombieData['money'] < bill:
+    if zombieData['money'] < bill:
         print('You Don\'t have enough Money...')
     else:
         zombieData['money'] -= bill
