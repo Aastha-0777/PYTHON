@@ -13,4 +13,8 @@ when eat food then health increase -> +5
 if health == 100 then can't eat more food
 
 
+
+
+-------------------------------------------------------------------------------
+
 '''
