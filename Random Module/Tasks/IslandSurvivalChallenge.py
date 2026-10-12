@@ -106,22 +106,22 @@ def beforStory():
     print('=================================== BEFORE STORY ===================================')
     time.sleep(1)
     print('You (THINKING) : Ah! What a great day.\n\tFinaly going back home after a long Time..')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('You (THINKING) : I will give suprice to my family \n\tand we will celebrate the New Year Together....')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('Wait What..!! What is happenning...')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('The Radar started Flactuating...')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('The engine blew up, sending the plane diving fast toward a strange jungle island.')
-    time.sleep(2.5)
+    time.sleep(1.5)
     print('The plane tore open, and everyone put on oxygen masks as bags flew everywhere.')
     clear_screen()
     time.sleep(2)
     print('BHOMMM..')
     time.sleep(2)
     print('The Plane Crashed!!!')
-    time.sleep(3.5)
+    time.sleep(1.5)
 
 
 def afterCrash():
@@ -130,13 +130,13 @@ def afterCrash():
     print('=================================== AFTER CRASH ===================================')
     time.sleep(2)
     print('You woke up alone on a dark beach next to the broken pieces of the plane.')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('You (THINKING) : What happened and how it happened...')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('You Saw Your Watch..\n\tGlass Broken Stated 17th dec.')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('You Realised that a Patroling helecotor will Come for patroling after 10 days...')
-    time.sleep(3.5)
+    time.sleep(1.5)
     print('So Now You have to Survive in this Island For 10 days....')
     time.sleep(1.5)
     clear_screen()
@@ -420,8 +420,8 @@ def drinkWater():
         return
 
 
-# beforStory()
-# afterCrash()
+beforStory()
+afterCrash()
 
 print('---------- WELCOME TO ISLAND SURVIVAL CHALLENGE ----------\n\n')
 
