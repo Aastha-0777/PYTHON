@@ -98,7 +98,7 @@ isAlive = True
 def clear_screen():
     print("\033[H\033[J", end="")
 
-# sorty itmeee
+# sorty timeee
 
 
 def beforStory():
