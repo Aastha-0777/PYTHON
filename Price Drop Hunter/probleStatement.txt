@@ -1,0 +1,115 @@
+PROBLEM STATEMENT: PRICE DROP HUNTER
+
+1. BACKGROUND
+Online prices change often, and checking them by hand every day is slow and easy to forget. 
+Nobody keeps a record of how a price moved, so you can't tell whether a "discount" is real.
+
+2. OBJECTIVE
+Build a single-file Python desktop application that:
+  a) Scrapes product names and prices from a website,
+  b) Stores every scrape in a database with a timestamp, so price history builds up,
+  c) Detects which products got cheaper since the previous scrape,
+  d) Displays everything in a simple window, with price drops highlighted.
+
+3. TECHNOLOGIES
+  - playwright : scraping
+  - sqlite3    : storage
+  - tkinter    : GUI
+  - datetime   : timestamps
+  - random, time : polite delays between page loads
+Target site: https://books.toscrape.com (a practice site built for scraping).
+Each product has a title, a price like "£51.77", and a link.
+
+4. INPUTS AND OUTPUTS
+Input:
+  - Target URL (set at the top of the file)
+  - Number of pages to scrape (default: 2 pages, about 40 products)
+  - User clicking the Refresh button
+Output:
+  - prices.db SQLite file with the saved history
+  - A table in the window showing each product's name, current price,
+    previous price, and change
+  - A status message, e.g. "Scraped 40 products. 3 price drops found."
+
+5. FUNCTIONAL REQUIREMENTS
+FR1: Scraping
+  For each product, collect the title, the price as text, and the product URL.
+  Go through the number of pages set, with a short random delay between pages.
+
+FR2: Price cleaning
+  Convert text like "£51.77" into the number 51.77 so prices can be compared.
+
+FR3: Database setup
+  On startup, create two tables if they don't exist:
+  - products : id, name, url (unique)
+  - prices   : id, product_id, price, scraped_at
+
+FR4: Saving data
+  On each scrape:
+  - If the product is new, add it to products.
+  - Always add a new row to prices with the current price and timestamp.
+  - Running the scraper twice must give each product two price rows,
+    and no duplicate products.
+
+FR5: Price-drop detection
+  For each product, compare its latest price with the one before it.
+  Return old price, new price, and difference.
+  A product is a "drop" if the new price is lower.
+
+FR6: GUI
+  - A window with a title, a Refresh button, a table of products, and a status label.
+  - Drop rows are highlighted (e.g. green text or background).
+  - Clicking Refresh runs a scrape, saves the data, and updates the table.
+
+FR7: Error handling
+  If the site doesn't load or an element is missing, show an error message
+  in the status label. The app must not crash.
+
+6. DATA FLOW
+Click Refresh -> scrape pages -> clean prices -> save to SQLite
+-> compare latest vs previous price -> update the table in the window
+
+7. EXAMPLE
+First run: every product has only one price, so the "Change" column shows "-".
+
+Second run, after a price changed:
+  Product                 Previous   Current   Change
+  A Light in the Attic    £51.77     £47.00    -£4.77  (highlighted)
+  Tipping the Velvet      £53.74     £53.74    0
+
+This site's prices never change, so test drops manually: edit a price in the
+database (e.g. raise one price by £5 with a SQL UPDATE), click Refresh,
+and confirm the drop is detected.
+
+8. CONSTRAINTS AND ASSUMPTIONS
+  - Everything lives in ONE .py file.
+  - Only one website is supported.
+  - Scraping runs only when the user clicks Refresh (no scheduling).
+  - The window may freeze briefly while scraping. This is acceptable for this version.
+  - Respect the site: use delays and don't scrape thousands of pages.
+
+9. SUGGESTED LAYOUT INSIDE THE SINGLE FILE
+  # ---------- 1. IMPORTS & SETTINGS ----------
+  # ---------- 2. DATABASE FUNCTIONS ----------
+  # ---------- 3. SCRAPING FUNCTIONS ----------
+  # ---------- 4. PRICE LOGIC ----------
+  # ---------- 5. GUI ----------
+  # ---------- 6. RUN THE APP ----------
+
+10. SUCCESS CRITERIA
+  [ ] Scraper prints 20+ products with clean numeric prices
+  [ ] Running twice creates no duplicate products and 2 price rows each
+  [ ] A manually changed price shows up as a drop
+  [ ] The GUI shows the table, with drops highlighted
+  [ ] A broken URL shows an error message instead of crashing
+  [ ] Code has comments and clear function names
+
+11. FUTURE ENHANCEMENTS (only after the checklist is done)
+  Price history chart, scraping a second site, email alert on a drop,
+  search/filter box, splitting into modules.
+
+12. SUGGESTED 4-DAY PLAN
+  Day 1: FR1 and FR2 - scrape and clean prices, print them in the terminal
+  Day 2: FR3 and FR4 - database tables and saving
+  Day 3: FR5         - drop detection, tested with a manual price edit
+  Day 4: FR6 and FR7 - GUI, error handling, README, upload to GitHub
