@@ -43,7 +43,7 @@ Online prices change often, and checking them by hand every day is slow and easy
 
 **Price Drop Hunter** solves this by saving every price it sees with a timestamp, then comparing the newest price with the previous one.
 
-The full written problem statement is in [`docs/problem_statement.txt`](docs/problem_statement.txt).
+The full written problem statement is in [`docs/problem_statement.txt`](./problem_statement.txt).
 
 ---
 
@@ -392,7 +392,7 @@ cd price-drop-hunter
 # 2. install the dependency
 pip install -r requirements.txt
 
-# 3. download the browser Playwright uses
+# 3. download the browser Playwright uses   
 playwright install chromium
 
 # 4. run the app
