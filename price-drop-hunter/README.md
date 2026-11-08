@@ -386,7 +386,7 @@ Real mistakes taught me the most, so here they are.
 
 ```bash
 # 1. clone the repository
-git clone https://github.com/Aastha-0777/PYTHON/tree/main/Price%20Drop%20Hunter
+git clone https://github.com/Aastha-0777/PYTHON/tree/main/price-drop-hunter
 cd price-drop-hunter
 
 # 2. install the dependency
